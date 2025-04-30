@@ -1,0 +1,62 @@
+.navbar {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.navbar-logo-img {
+    height: 40px;
+}
+
+.navbar-toggle {
+    font-size: 2.6rem;
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.navbar-toggle:hover {
+    transform: scale(1.1);
+}
+
+.navbar-menu {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    top: 100%;
+    right: 1.5rem;
+    background-color: var(--primary-blue);
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.navbar-menu.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.navbar-menu a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    font-size: 1.6rem;
+    transition: color 0.3s;
+}
+
+.navbar-menu a:hover {
+    color: var(--accent-yellow);
+}

@@ -1,0 +1,88 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 62.5%; 
+
+  --primary-blue: #5DADE2;
+  --light-green: #58D68D;
+  --accent-yellow: #F7DC6F;
+  --white: #FFFFFF;
+  --text-color: #222;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+html, body {
+  font-family: 'Poppins', 'Open Sans', sans-serif;
+  background-color: var(--white);
+  color: var(--text-color);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-blue);
+}
+
+a:hover {
+  color: var(--light-green);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+header {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+main {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+button {
+  background-color: var(--light-green);
+  color: var(--white);
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45c278;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .navbar-blur {
+    background-color: rgba(93, 173, 226, 0.7); /* same as --primary-blue but transparent */
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+}
