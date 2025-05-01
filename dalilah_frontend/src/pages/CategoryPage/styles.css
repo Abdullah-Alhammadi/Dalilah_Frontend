@@ -1,0 +1,32 @@
+.category-page {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .category-card {
+    background-color: var(--light-green);
+    color: white;
+    padding: 2rem;
+    width: 280px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .category-card h2 {
+    font-size: 1.8rem;
+  }
+  
