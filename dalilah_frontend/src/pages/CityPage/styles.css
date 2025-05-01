@@ -1,0 +1,40 @@
+.city-page {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .city-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .city-card {
+    background-color: #5DADE2;
+    color: white;
+    padding: 2rem;
+    width: 300px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    border: 2px solid red;
+
+  }
+  
+  .city-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .city-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .city-card p {
+    font-size: 1.4rem;
+  }
+  
