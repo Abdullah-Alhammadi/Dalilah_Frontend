@@ -11,7 +11,7 @@ export default function CityPage({ onSelectCity }) {
         async function fetchCities() {
             try {
                 const data = await getCities();
-                console.log('Fetched cities:', data); 
+                console.log('Fetched cities:', data);
                 setCities(data);
             } catch (err) {
                 console.error('Error fetching cities:', err);
@@ -21,9 +21,9 @@ export default function CityPage({ onSelectCity }) {
     }, []);
 
     function handleCityClick(city) {
-        console.log('Clicked city:', city); 
-        onSelectCity(city); 
-        navigate('/categories'); 
+        console.log('Clicked city:', city);
+        onSelectCity(city);
+        navigate('/categories');
     }
 
     return (
@@ -35,7 +35,6 @@ export default function CityPage({ onSelectCity }) {
                         key={city.id}
                         className="city-card"
                         onClick={() => handleCityClick(city)}
-                        style={{ border: '1px solid #ccc', padding: '1rem', cursor: 'pointer' }} // ✅ بس للتجربة
                     >
                         <h2>{city.name}</h2>
                         <p>{city.description.slice(0, 150)}...</p>
@@ -45,3 +44,9 @@ export default function CityPage({ onSelectCity }) {
         </section>
     );
 }
+
+
+
+
+
+

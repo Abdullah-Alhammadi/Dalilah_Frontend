@@ -1,0 +1,43 @@
+.places-page {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .places-page h1 {
+    font-size: 2.4rem;
+    color: var(--primary-blue);
+    margin-bottom: 2rem;
+  }
+  
+  .place-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .place-card {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 1.5rem 2rem;
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    text-align: left;
+  }
+  
+  .place-card:hover {
+    transform: translateY(-6px);
+  }
+  
+  .place-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .place-card p {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+  
