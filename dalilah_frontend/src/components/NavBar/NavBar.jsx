@@ -27,7 +27,7 @@ export default function Navbar() {
                 <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
                 <Link to="/explore" onClick={() => setMenuOpen(false)}>See Places</Link>
                 <Link to="/places/add" onClick={() => setMenuOpen(false)}>Add Place</Link>
-
+                <Link to="/recommendations" onClick={() => setMenuOpen(false)}>Your Recommendations</Link>
             </div>
         </nav>
     );

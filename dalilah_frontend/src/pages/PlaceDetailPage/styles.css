@@ -1,0 +1,111 @@
+.place-detail-page {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.place-detail-page h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-blue);
+    text-align: center;
+}
+
+.place-detail-page p {
+    font-size: 1.6rem;
+    margin: 0.5rem 0;
+}
+
+.place-detail-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.btn {
+    padding: 0.8rem 1.4rem;
+    font-size: 1.4rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.delete-btn {
+    background-color: var(--danger-red);
+    color: white;
+}
+
+.reviews-section {
+    margin-top: 3rem;
+}
+
+.reviews-section h2 {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.review-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+}
+
+.review-item {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    font-size: 1.5rem;
+}
+
+.delete-review-btn {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--danger-red);
+}
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.review-form textarea {
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background-color: var(--light-green);
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #45c278;
+}

@@ -1,6 +1,5 @@
 .navbar {
-    background-color: var(--primary-blue);
-    color: var(--white);
+    background-color: rgb(100 222 128 / 52%); 
     padding: 1rem 1.5rem;
     display: flex;
     justify-content: space-between;
@@ -11,7 +10,7 @@
 }
 
 .navbar-logo-img {
-    height: 40vh;
+    height: 50px;
 }
 
 .navbar-toggle {

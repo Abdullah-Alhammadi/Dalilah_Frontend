@@ -1,0 +1,47 @@
+.edit-place-page {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-place-page h1 {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--primary-blue);
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .form-container input,
+  .form-container textarea,
+  .form-container select {
+    padding: 0.8rem 1rem;
+    font-size: 1.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+  }
+  
+  .btn.submit-btn {
+    background-color: var(--light-green);
+    color: white;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn.submit-btn:hover {
+    background-color: #45c278;
+  }
+  

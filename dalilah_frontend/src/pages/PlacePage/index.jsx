@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { getPlacesByCityAndCategory } from '../../utilities/place-api';
+import { useNavigate, Link } from 'react-router-dom';
+import { getPlacesByCityAndCategory } from '../../utilities/place-api'; 
 import './styles.css';
+
+
+
 
 export default function PlacesPage({ selectedCity, selectedCategory }) {
     const [places, setPlaces] = useState([]);
@@ -9,7 +12,7 @@ export default function PlacesPage({ selectedCity, selectedCategory }) {
 
     useEffect(() => {
         if (!selectedCity || !selectedCategory) {
-            navigate('/explore'); 
+            navigate('/explore');
             return;
         }
 
@@ -36,13 +39,19 @@ export default function PlacesPage({ selectedCity, selectedCategory }) {
             <div className="place-list">
                 {places.length ? (
                     places.map((place) => (
-                        <div key={place.id} className="place-card">
-                            <h2>{place.name}</h2>
-                            <p>{place.description}</p>
-                            <p>
-                                <strong>Location:</strong> {place.location}
-                            </p>
-                        </div>
+                        <Link
+                            to={`/places/${place.id}`}
+                            key={place.id}
+                            className="place-card-link"
+                        >
+                            <div className="place-card">
+                                <h2>{place.name}</h2>
+                                <p>{place.description}</p>
+                                <p>
+                                    <strong>Location:</strong> {place.location}
+                                </p>
+                            </div>
+                        </Link>
                     ))
                 ) : (
                     <p>No places found in this category.</p>
