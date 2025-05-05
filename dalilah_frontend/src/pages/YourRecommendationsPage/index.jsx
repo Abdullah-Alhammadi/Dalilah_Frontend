@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'; 
-import { getAllPlaces } from '../../utilities/place-api';
+import { Link } from 'react-router-dom';
+import { getUserPlaces } from '../../utilities/place-api';
 import './styles.css';
 
 export default function YourRecommendationsPage() {
@@ -9,7 +9,7 @@ export default function YourRecommendationsPage() {
     useEffect(() => {
         async function fetchPlaces() {
             try {
-                const data = await getAllPlaces();
+                const data = await getUserPlaces();
                 setPlaces(data);
             } catch (err) {
                 console.error('Error fetching places:', err);
