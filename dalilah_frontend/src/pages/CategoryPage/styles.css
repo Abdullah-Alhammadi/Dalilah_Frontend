@@ -1,32 +1,64 @@
-.category-page {
-    text-align: center;
-    padding: 2rem;
-  }
-  
-  .category-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
-  .category-card {
-    background-color: var(--light-green);
-    color: white;
-    padding: 2rem;
-    width: 280px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .category-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .category-card h2 {
-    font-size: 1.8rem;
-  }
-  
+.category-page-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1rem;
+  gap: 2rem;
+}
+
+.category-list-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.category-list-vertical:hover>.category-card-vertical:not(:hover) {
+  filter: blur(4px);
+  transform: scale(0.95);
+}
+
+.category-card-vertical {
+  background: var(--light-green);
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.category-card-vertical:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  filter: none;
+  z-index: 2;
+}
+
+.category-card-vertical .emoji {
+  font-size: 2.8rem;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+
+.category-card-vertical.restaurant {
+  background: linear-gradient(135deg, #f7dc6f, #f1c40f);
+}
+
+.category-card-vertical.culture {
+  background: linear-gradient(135deg, #5DADE2, #3498db);
+}
+
+.category-card-vertical.secret {
+  background: linear-gradient(135deg, #58D68D, #2ecc71);
+}
+
+.category-card-vertical.nature {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+}

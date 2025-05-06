@@ -1,37 +1,70 @@
-.recommendations-page {
-    padding: 2rem;
-    text-align: center;
-}
-
-.place-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
 .place-card {
-    background-color: var(--primary-blue);
-    color: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    width: 300px;
-    text-align: left;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    position: relative;
+    padding-top: 2rem;
 }
 
-.place-card:hover {
-    transform: translateY(-5px);
+.place-actions {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    pointer-events: none;
 }
 
-.place-card h2 {
-    margin-bottom: 0.8rem;
-    font-size: 1.8rem;
+.edit-btn,
+.delete-btn {
+    background-color: #ffffff;
+    color: var(--primary-blue);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    pointer-events: all;
 }
 
-.place-card p {
-    margin: 0.4rem 0;
-    font-size: 1.4rem;
+.edit-btn:hover {
+    background-color: #d6eaff;
 }
+
+.delete-btn:hover {
+    background-color: #ffe0e0;
+}
+
+
+
+
+.recommendations-page {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    min-height: 100vh;
+    padding: 4rem 3rem;
+}
+
+.category{
+    color: #ffffffd1;
+}
+
+
+.reco{
+    font-size: 20px;
+}
+
+
+/* .place-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 900px;
+} */

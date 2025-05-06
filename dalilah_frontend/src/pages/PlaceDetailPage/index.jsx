@@ -11,8 +11,10 @@ import {
     updateReview,
 } from '../../utilities/review-api';
 import './styles.css';
+import DisplayReview from '../../components/DisplayReview/DisplayReview';
 
-export default function PlaceDetailPage() {
+
+export default function PlaceDetailPage({ user }) {
     const { placeId } = useParams();
     const navigate = useNavigate();
     const [place, setPlace] = useState(null);
@@ -20,6 +22,7 @@ export default function PlaceDetailPage() {
     const [newReview, setNewReview] = useState('');
     const [editingReviewId, setEditingReviewId] = useState(null);
     const [editedContent, setEditedContent] = useState('');
+
 
     useEffect(() => {
         async function fetchData() {
@@ -54,7 +57,8 @@ export default function PlaceDetailPage() {
         if (!newReview.trim()) return;
 
         try {
-            const created = await createReview(placeId, { content: newReview });
+            const created = await createReview(placeId, { content: newReview, place_id: placeId });
+            console.log('Review created:', created);
             setReviews([...reviews, created]);
             setNewReview('');
         } catch (err) {
@@ -74,23 +78,13 @@ export default function PlaceDetailPage() {
         }
     }
 
-    function handleEditClick(review) {
-        setEditingReviewId(review.id);
-        setEditedContent(review.content);
-    }
-
-    async function handleUpdateReview(reviewId) {
-        if (!editedContent.trim()) return;
+    async function handleUpdateReview(reviewId, formData) {
+        if (!formData.trim()) return;
 
         try {
-            const updated = await updateReview(reviewId, {
-                content: editedContent,
-                place: placeId,
-            });
-            const updatedReviews = reviews.map(r => r.id === reviewId ? updated : r);
+            await updateReview(reviewId, { content: formData });
+            const updatedReviews = reviews.map(r => r.id === reviewId ? { ...r, content: formData } : r);
             setReviews(updatedReviews);
-            setEditingReviewId(null);
-            setEditedContent('');
         } catch (err) {
             console.error('Error updating review:', err);
         }
@@ -100,16 +94,22 @@ export default function PlaceDetailPage() {
 
     return (
         <section className="place-detail-page">
-            <h1>{place.name}</h1>
-            <p><strong>Added by:</strong> {place.username}</p>
-            <p><strong>Description:</strong> {place.description}</p>
-            <p><strong>Location:</strong> {place.location}</p>
-            <p><strong>City:</strong> {place.city_name}</p>
-            <p><strong>Category:</strong> {place.category_name}</p>
+            <div className="place-header">
+                <span className="added-by">Added by: {place.username}</span>
+                <span className="city">City: {place.city_name}</span>
+            </div>
 
-            <div className="place-detail-actions">
-                <Link to={`/places/edit/${place.id}`} className="btn edit-btn">Edit</Link>
-                <button onClick={handleDelete} className="btn delete-btn">Delete</button>
+            <h1 className="place-name">{place.name}</h1>
+
+            <div className="place-info">
+                <p><strong>Description:</strong> {place.description}</p>
+                <p>
+                    <strong>Location:</strong>{" "}
+                    <a href={place.location} target="_blank" rel="noopener noreferrer">
+                        Google Maps
+                    </a>
+                </p>
+                <p><strong>Category:</strong> {place.category_name}</p>
             </div>
 
             <hr />
@@ -118,32 +118,19 @@ export default function PlaceDetailPage() {
                 <h2>Reviews</h2>
                 {reviews.length ? (
                     <ul className="review-list">
-                        {reviews.map((review) =>
-                            review && (
-                                <li key={review.id} className="review-item">
-                                    {editingReviewId === review.id ? (
-                                        <>
-                                            <input
-                                                type="text"
-                                                value={editedContent}
-                                                onChange={(e) => setEditedContent(e.target.value)}
-                                            />
-                                            <button onClick={() => handleUpdateReview(review.id)} className="save-review-btn">💾</button>
-                                            <button onClick={() => setEditingReviewId(null)} className="cancel-review-btn">✖️</button>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <span><strong>{review.username}:</strong> {review.content}</span>
-                                            <button onClick={() => handleEditClick(review)} className="edit-review-btn">✏️</button>
-                                            <button onClick={() => handleDeleteReview(review.id)} className="delete-review-btn">🗑️</button>
-                                        </>
-                                    )}
-                                </li>
-                            )
-                        )}
+                        {reviews.map((review) => (
+                            <DisplayReview
+                                key={review.id}
+                                review={review}
+                                user={user}
+                                handleUpdateReview={handleUpdateReview}
+                                handleDeleteReview={handleDeleteReview}
+                            />
+                        ))}
                     </ul>
                 ) : (
                     <p>No reviews yet.</p>
+                    
                 )}
 
                 <form onSubmit={handleAddReview} className="review-form">
@@ -157,5 +144,6 @@ export default function PlaceDetailPage() {
                 </form>
             </section>
         </section>
+
     );
 }

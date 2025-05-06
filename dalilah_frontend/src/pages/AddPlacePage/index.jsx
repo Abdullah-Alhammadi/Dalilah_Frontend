@@ -44,7 +44,7 @@ export default function AddPlacePage() {
         evt.preventDefault();
         try {
             await createPlace(formData);
-            navigate("/places");  
+            navigate("/recommendations");  
         } catch (err) {
             console.error("Error adding place:", err);
         }

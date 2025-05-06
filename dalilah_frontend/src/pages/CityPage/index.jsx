@@ -11,7 +11,6 @@ export default function CityPage({ onSelectCity }) {
         async function fetchCities() {
             try {
                 const data = await getCities();
-                console.log('Fetched cities:', data);
                 setCities(data);
             } catch (err) {
                 console.error('Error fetching cities:', err);
@@ -21,32 +20,26 @@ export default function CityPage({ onSelectCity }) {
     }, []);
 
     function handleCityClick(city) {
-        console.log('Clicked city:', city);
         onSelectCity(city);
         navigate('/categories');
     }
 
     return (
-        <section className="city-page">
-            <h1>Select a City</h1>
-            <div className="city-list">
-                {cities.map((city) => (
-                    <div
-                        key={city.id}
-                        className="city-card"
-                        onClick={() => handleCityClick(city)}
-                    >
-                        <h2>{city.name}</h2>
-                        <p>{city.description.slice(0, 150)}...</p>
+        <section className="city-page-vertical">
+            {cities.map((city) => (
+                <div
+                    key={city.id}
+                    className={`card ${city.name.toLowerCase() === 'riyadh' ? 'riyadh-card' : 'abha-card'}`}
+                    onClick={() => handleCityClick(city)}
+                >
+                    <div className="first-content">
+                        <span>{city.name}</span>
                     </div>
-                ))}
-            </div>
+                    <div className="second-content">
+                        <p>{city.description}</p>
+                    </div>
+                </div>
+            ))}
         </section>
     );
 }
-
-
-
-
-
-

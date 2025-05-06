@@ -9,14 +9,13 @@ export default function CategoryPage({ selectedCity, onSelectCategory }) {
 
     useEffect(() => {
         if (!selectedCity) {
-            navigate('/explore'); 
+            navigate('/explore');
             return;
         }
 
         async function fetchCategories() {
             try {
                 const data = await getCategories();
-                console.log('Fetched categories:', data); 
                 setCategories(data);
             } catch (err) {
                 console.error('Error fetching categories:', err);
@@ -26,26 +25,32 @@ export default function CategoryPage({ selectedCity, onSelectCategory }) {
         fetchCategories();
     }, [selectedCity, navigate]);
 
+    function getIcon(name) {
+        const lowerName = name.toLowerCase();
+        if (lowerName.includes('restaurant')) return '🍽️';
+        if (lowerName.includes('culture')) return '🏛️';
+        if (lowerName.includes('secret')) return '🕵️‍♂️';
+        if (lowerName.includes('nature')) return '🌿';
+        return '📍';
+    }
+
     function handleSelect(category) {
         onSelectCategory(category);
-        navigate('/places');  
+        navigate('/places');
     }
 
     return (
-        <section className="category-page">
+        <section className="category-page-vertical">
             <h1>Select a Category in {selectedCity?.name}</h1>
-            <div className="category-list">
+            <div className="category-list-vertical">
                 {categories.map((category) => (
                     <div
                         key={category.id}
-                        className="category-card"
+                        className={`category-card-vertical ${category.name.toLowerCase().replace(/\s+/g, '-')}`}
                         onClick={() => handleSelect(category)}
-                        style={{ border: '1px solid #ccc', padding: '1rem', cursor: 'pointer' }} // فقط لتجربة البصرية
                     >
-                        <h2>
-                            {category.name === 'Secret Places' && '😉 '}
-                            {category.name}
-                        </h2>
+                        <span className="emoji">{getIcon(category.name)}</span>
+                        <h2>{category.name}</h2>
                     </div>
                 ))}
             </div>

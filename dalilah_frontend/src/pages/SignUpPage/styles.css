@@ -1,72 +1,95 @@
 .page-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-top: 4rem;
+    animation: fadeIn 0.6s ease;
 }
 
-.page-header img {
-    width: 120px;
-    height: auto;
-    margin-top: 1rem;
+.page-header h1 {
+    color: var(--primary-blue);
+    font-size: 2.8rem;
 }
 
 .form-container.signup {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: #ffffff;
+    max-width: 550px;
+    margin: 2rem auto;
+    padding: 3rem;
+    background-color: #fff;
     border-radius: 12px;
-    box-shadow: 0 0 16px rgba(93, 173, 226, 0.3);
-    border-left: 8px solid #58D68D;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    animation: slideUpFade 0.6s ease-in-out;
 }
 
-.form-container.signup table {
+.form-container table {
     width: 100%;
+    border-spacing: 1rem 1.5rem;
 }
 
-.form-container.signup th {
+.form-container th {
     text-align: left;
-    padding-right: 1rem;
-    vertical-align: top;
-    width: 35%;
-    color: #34495E;
+    font-size: 1.4rem;
+    color: var(--text-color);
 }
 
-.form-container.signup input {
+.form-container td input {
     width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    margin-top: 0.25rem;
+    padding: 0.8rem;
     border: 1px solid #ccc;
-    border-radius: 6px;
+    border-radius: 8px;
+    font-size: 1.4rem;
     transition: border 0.3s ease;
 }
 
-.form-container.signup input:focus {
-    border-color: #5DADE2;
+.form-container td input:focus {
     outline: none;
+    border-color: var(--primary-blue);
 }
 
-.form-container.signup p {
-    color: #E74C3C;
-    font-size: 0.85rem;
-    margin-top: 0.25rem;
+.form-container p {
+    color: red;
+    font-size: 1.2rem;
+    margin-top: 0.4rem;
 }
 
 .btn.submit {
-    background-color: #58D68D;
+    background-color: var(--light-green);
     color: #fff;
-    padding: 0.75rem 1.5rem;
-    margin-top: 1.5rem;
+    padding: 1rem 2rem;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
+    font-weight: bold;
     cursor: pointer;
-    font-weight: 600;
-    font-size: 1rem;
     display: block;
-    margin-left: auto;
+    margin: 2rem auto 0;
     transition: background-color 0.3s ease;
 }
 
-.btn.submit:hover {
-    background-color: #45b174;
+.btn.submit:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.btn.submit:hover:not(:disabled) {
+    background-color: #45c278;
+}
+
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

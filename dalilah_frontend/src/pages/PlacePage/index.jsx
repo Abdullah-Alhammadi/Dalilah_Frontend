@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { getPlacesByCityAndCategory } from '../../utilities/place-api'; 
+import { getPlacesByCityAndCategory } from '../../utilities/place-api';
 import './styles.css';
-
-
-
 
 export default function PlacesPage({ selectedCity, selectedCategory }) {
     const [places, setPlaces] = useState([]);
@@ -45,11 +42,11 @@ export default function PlacesPage({ selectedCity, selectedCategory }) {
                             className="place-card-link"
                         >
                             <div className="place-card">
-                                <h2>{place.name}</h2>
-                                <p>{place.description}</p>
-                                <p>
-                                    <strong>Location:</strong> {place.location}
-                                </p>
+                                <div className="blob"></div>
+                                <div className="bg">
+                                    <h2>{place.name}</h2>
+                                </div>
+                                <div className="pin">📍</div>
                             </div>
                         </Link>
                     ))

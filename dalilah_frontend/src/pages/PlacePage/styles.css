@@ -1,43 +1,104 @@
 .places-page {
-    text-align: center;
-    padding: 2rem;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.places-page h1 {
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+  color: #5DADE2;
+  text-align: center;
+}
+
+.place-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.place-card-link {
+  text-decoration: none;
+}
+
+.place-card {
+  position: relative;
+  background-color: rgba(18, 51, 63, 0.98);
+  border-radius: 18px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  color: #5DADE2;
+  box-shadow: 0 0 12px rgba(18, 51, 63, 0.15);
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.place-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(18, 51, 63, 0.3);
+}
+
+.place-card h2 {
+  font-size: 2rem;
+  color: #ffffffd1;
+  margin: 0;
+  z-index: 2;
+}
+
+.blob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: #5dade2;
+  opacity: 0.2;
+  filter: blur(18px);
+  animation: blob-bounce 6s infinite ease-in-out;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+@keyframes blob-bounce {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0);
   }
-  
-  .places-page h1 {
-    font-size: 2.4rem;
-    color: var(--primary-blue);
-    margin-bottom: 2rem;
+
+  25% {
+    transform: translate(-50%, -50%) translate(50px, -10px);
   }
-  
-  .place-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
+
+  50% {
+    transform: translate(-50%, -50%) translate(0, 50px);
   }
-  
-  .place-card {
-    background-color: var(--primary-blue);
-    color: white;
-    padding: 1.5rem 2rem;
-    width: 320px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
-    text-align: left;
+
+  75% {
+    transform: translate(-50%, -50%) translate(-40px, 0);
   }
-  
-  .place-card:hover {
-    transform: translateY(-6px);
+
+  100% {
+    transform: translate(-50%, -50%) translate(0, 0);
   }
-  
-  .place-card h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-  }
-  
-  .place-card p {
-    font-size: 1.4rem;
-    margin-bottom: 0.6rem;
-  }
-  
+}
+
+.pin {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 1.8rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.place-card:hover .pin {
+  opacity: 1;
+}

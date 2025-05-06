@@ -26,7 +26,7 @@ export default function LoginPage({ setUser }) {
 
     return (
         <div className="page-container">
-            <h1>Login</h1>
+            <h1 className="login">Login</h1>
             <form onSubmit={handleSubmit} className="form-container signup">
                 <table>
                     <tbody>
@@ -57,7 +57,7 @@ export default function LoginPage({ setUser }) {
                     </tbody>
                 </table>
                 {error && <p className="error">{error}</p>}
-                <button type="submit" className="btn submit">Login</button>
+                <button type="submit" className="btn submit">GO</button>
             </form>
         </div>
     );

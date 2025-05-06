@@ -1,6 +1,109 @@
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 2rem;
+  min-height: 80vh;
+  gap: 4rem;
+  animation: fadeIn 0.7s ease-in-out;
+  background-color: #f9f9f9;
+  flex-wrap: wrap;
+}
+
+.login-image img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  animation: slideUpFade 1s ease forwards;
+}
+
+.login-form {
+  background-color: white;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 400px;
+  animation: slideUpFade 1s ease forwards;
+}
+
+.login-form h2 {
+  color: var(--primary-blue);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.login-form input {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  transition: border 0.3s ease;
+}
+
+.login-form input:focus {
+  border-color: var(--primary-blue);
+  outline: none;
+}
+
+.login-form button {
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--light-green);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #45c278;
+}
+
+.login-form p {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.login-form a {
+  color: var(--primary-blue);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.login-form a:hover {
+  color: var(--light-green);
+}
+
+
+.login {
+  text-align: center;
+  color: var(--primary-blue);
+  font-size: 2.8rem;
+}
+
 .error {
-    color: red;
-    font-weight: bold;
-    margin-top: 10px;
+  color: red;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,5 +1,11 @@
 import sendRequest from "./sendRequest";
 
+const BASE_URL = "/api/reviews/";
+
+export async function getAllReviews() {
+    return sendRequest(BASE_URL);
+}
+
 export async function getReviewsForPlace(placeId) {
     return sendRequest(`/api/places/${placeId}/reviews/`);
 }

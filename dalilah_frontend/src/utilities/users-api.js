@@ -4,12 +4,10 @@ const url = "/api/users";
 export async function signup(formData) {
     try {
         const response = await sendRequest(`${url}/signup/`, "POST", formData);
-        localStorage.setItem("accessToken", response.access);
-        localStorage.setItem("refreshToken", response.refresh);
+        storeTokens(response);
         return response.user;
     } catch (err) {
-        localStorage.removeItem("accessToken");
-        localStorage.removeItem("refreshToken");
+        clearTokens();
         return null;
     }
 }
@@ -17,20 +15,16 @@ export async function signup(formData) {
 export async function login(formData) {
     try {
         const response = await sendRequest(`${url}/login/`, "POST", formData);
-        localStorage.setItem("accessToken", response.access);
-        localStorage.setItem("refreshToken", response.refresh);
-        console.log(response, "login check response");
+        storeTokens(response);
         return response.user;
     } catch (err) {
-        localStorage.removeItem("accessToken");
-        localStorage.removeItem("refreshToken");
+        clearTokens();
         return null;
     }
 }
 
 export async function logout() {
-    localStorage.removeItem("accessToken");
-    localStorage.removeItem("refreshToken");
+    clearTokens();
 }
 
 export async function getUser() {
@@ -39,13 +33,22 @@ export async function getUser() {
         if (refreshToken) {
             const response = await sendRequest(`${url}/token/refresh/`, "POST", { refresh: refreshToken });
             localStorage.setItem("accessToken", response.access);
-
             const verified = await sendRequest(`${url}/verify/`, "GET");
             return verified.user;
         }
         return null;
     } catch (err) {
-        console.log(err, "Error refreshing user");
+        clearTokens();
         return null;
     }
+}
+
+function storeTokens({ access, refresh }) {
+    localStorage.setItem("accessToken", access);
+    localStorage.setItem("refreshToken", refresh);
+}
+
+function clearTokens() {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
 }
