@@ -27,11 +27,11 @@ export default function CategoryPage({ selectedCity, onSelectCategory }) {
 
     function getIcon(name) {
         const lowerName = name.toLowerCase();
-        if (lowerName.includes('restaurant')) return '🍽️';
-        if (lowerName.includes('culture')) return '🏛️';
+        if (lowerName.includes('restaurant')) return '🍽️' + '☕️';
+        if (lowerName.includes('culture')) return '🏛️' + '📜';
         if (lowerName.includes('secret')) return '🕵️‍♂️';
         if (lowerName.includes('nature')) return '🌿';
-        return '📍';
+        return '🎭';
     }
 
     function handleSelect(category) {

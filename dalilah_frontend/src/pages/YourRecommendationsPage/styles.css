@@ -17,8 +17,8 @@
 
 .edit-btn,
 .delete-btn {
-    background-color: #ffffff;
-    color: var(--primary-blue);
+    background-color: #000000;
+    color: #ffffffd1;
     border: none;
     padding: 0.5rem 1rem;
     font-weight: bold;
@@ -30,11 +30,11 @@
 }
 
 .edit-btn:hover {
-    background-color: #d6eaff;
+    background-color: #65aaf5;
 }
 
 .delete-btn:hover {
-    background-color: #ffe0e0;
+    background-color: #c35252;
 }
 
 
@@ -57,8 +57,14 @@
 
 .reco{
     font-size: 20px;
+    margin: 25px
 }
 
+
+
+.no_reco{
+    text-align: center;
+}
 
 /* .place-list {
     display: flex;

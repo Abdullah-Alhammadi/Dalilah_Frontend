@@ -42,3 +42,22 @@ Dalilah provides users with a seamless experience where they can:
 - Write and view detailed reviews to share real experiences.
 
 The platform aims to feel like a **friendly local guide** in your pocket!
+
+
+
+## 🌐 Frontend Routes
+
+<table border="1">
+<tr><th>Path</th><th>Component</th><th>Description</th></tr>
+<tr><td>/</td><td>HomePage</td><td>Landing page with video and animated welcome message</td></tr>
+<tr><td>/about</td><td>AboutPage</td><td>About Dalilah and the idea behind it</td></tr>
+<tr><td>/explore</td><td>CityPage</td><td>Select a city to explore (Riyadh or Abha)</td></tr>
+<tr><td>/categories</td><td>CategoryPage</td><td>Choose a category after selecting a city</td></tr>
+<tr><td>/places</td><td>PlacesPage</td><td>List of places in the selected city and category</td></tr>
+<tr><td>/places/add</td><td>AddPlacePage</td><td>Form to add a new recommended place</td></tr>
+<tr><td>/recommendations</td><td>YourRecommendationsPage</td><td>View and manage places added by the current user</td></tr>
+<tr><td>/places/:placeId</td><td>PlaceDetailPage</td><td>Details page for a specific place, with reviews</td></tr>
+<tr><td>/places/edit/:placeId</td><td>EditPlacePage</td><td>Edit an existing recommended place</td></tr>
+<tr><td>/signup</td><td>SignupPage</td><td>Create a new user account</td></tr>
+<tr><td>/login</td><td>LoginPage</td><td>Sign into an existing account</td></tr>
+</table>
