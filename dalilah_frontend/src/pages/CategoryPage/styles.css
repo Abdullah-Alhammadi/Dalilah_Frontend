@@ -20,7 +20,7 @@
 }
 
 .category-card-vertical {
-  background: var(--light-green);
+  background: #6a8f79;
   padding: 2.5rem 2rem;
   border-radius: 18px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);

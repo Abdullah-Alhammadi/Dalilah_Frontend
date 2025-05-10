@@ -31,7 +31,7 @@ export default function PlacesPage({ selectedCity, selectedCategory }) {
     return (
         <section className="places-page">
             <h1>
-                Places in {selectedCity.name} - {selectedCategory.name}
+                Recommendations in {selectedCity.name} - {selectedCategory.name}
             </h1>
             <div className="place-list">
                 {places.length ? (

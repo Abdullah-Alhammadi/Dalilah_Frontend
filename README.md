@@ -1,63 +1,104 @@
-# Dalilah_Frontend
+# 🌐 Dalilah Frontend
 
-# Identity and Theme
+Dalilah is a vibrant web platform that helps locals and tourists discover authentic places in major cities like Riyadh and Abha — all based on real user recommendations.
 
-## Project Identity
+---
 
-**Dalilah** is a user-friendly platform designed to help visitors and locals discover the best places within major cities. The core idea is to rely on real recommendations from locals rather than generic tourist attractions, creating a more authentic travel and exploration experience.
+## 🎯 Project Identity
 
-- **Project Name:** Dalilah (دليلة)
+- **Name:** Dalilah (دليلة)
 - **Slogan:** Discover like a local!
-- **Target Audience:** 
-  - Tourists and travelers exploring new cities.
-  - Local residents seeking new experiences and places.
-- **Main Goal:** 
-  - Provide an easy and trusted way to find great places through user-generated recommendations.
-  - Highlight the authentic culture and hotspots of each city.
+- **Target Users:** Tourists, locals, and city explorers
+- **Main Goal:** Make it easy to explore trustworthy places with real recommendations from the community
 
-## Visual Identity
+---
 
-- **Overall Mood:** Friendly, reliable, vibrant, and adventurous.
-- **Logo Concept:** 
-  - Map pin (📍) or compass (🧭) representing discovery and navigation.
+## 🎨 Visual Identity
+
 - **Primary Colors:**
-  - Sky Blue (#5DADE2) — Trust, clarity, and adventure.
-  - Light Green (#58D68D) — Nature, freshness, and activity.
-  - White (#FFFFFF) — Clean design and readability.
-  - Optional Accent: Soft Yellow (#F7DC6F) — Energy and positivity.
-- **Typography:** 
-  - Modern and simple fonts such as Poppins or Open Sans to ensure readability and a clean look.
-- **Design Style:**
-  - Clean card-based layout to showcase places and reviews.
-  - High-quality images for places.
-  - Minimalistic icons for easy navigation.
+  - Sky Blue `#5DADE2`
+  - Light Green `#58D68D`
+  - White `#FFFFFF`
+  - Accent: Soft Yellow `#F7DC6F`
+- **Typography:** Poppins & Open Sans
+- **Design Style:** Clean, modern, and card-based with minimal UI
 
-## Website Experience
+---
 
-Dalilah provides users with a seamless experience where they can:
-- Browse random reviews without an account.
-- Sign up or log in to access personalized features.
-- Easily browse by city and category.
-- Add new places through a simple and guided form.
-- Write and view detailed reviews to share real experiences.
+## 💻 Website Features
 
-The platform aims to feel like a **friendly local guide** in your pocket!
+- Fully responsive interface using React
+- Video hero section with animated welcome header
+- Smooth route transitions with protected access
+- Review system with edit/delete options
+- Dynamic splash loader and page transitions
+- Conditional rendering based on user state
+- Google Maps label opens in a new tab
+- "Your Recommendations" page with full CRUD support
 
-
+---
 
 ## 🌐 Frontend Routes
 
-<table border="1">
-<tr><th>Path</th><th>Component</th><th>Description</th></tr>
-<tr><td>/</td><td>HomePage</td><td>Landing page with video and animated welcome message</td></tr>
-<tr><td>/about</td><td>AboutPage</td><td>About Dalilah and the idea behind it</td></tr>
-<tr><td>/explore</td><td>CityPage</td><td>Select a city to explore (Riyadh or Abha)</td></tr>
-<tr><td>/categories</td><td>CategoryPage</td><td>Choose a category after selecting a city</td></tr>
-<tr><td>/places</td><td>PlacesPage</td><td>List of places in the selected city and category</td></tr>
-<tr><td>/places/add</td><td>AddPlacePage</td><td>Form to add a new recommended place</td></tr>
-<tr><td>/recommendations</td><td>YourRecommendationsPage</td><td>View and manage places added by the current user</td></tr>
-<tr><td>/places/:placeId</td><td>PlaceDetailPage</td><td>Details page for a specific place, with reviews</td></tr>
-<tr><td>/places/edit/:placeId</td><td>EditPlacePage</td><td>Edit an existing recommended place</td></tr>
-<tr><td>/signup</td><td>SignupPage</td><td>Create a new user account</td></tr>
-<tr><td>/login</td><td>LoginPage</td><td>Sign into an existing account</td></tr>
-</table>
+| Path                    | Component               | Description                                      |
+|-------------------------|--------------------------|--------------------------------------------------|
+| `/`                     | HomePage                | Landing with animated header + video             |
+| `/about`                | AboutPage               | Description of Dalilah’s mission and idea        |
+| `/explore`              | CityPage                | Select a city (Riyadh or Abha)                   |
+| `/categories`           | CategoryPage            | Choose a category after city selection           |
+| `/places`               | PlacesPage              | List of filtered places by city and category     |
+| `/places/add`           | AddPlacePage            | Submit a new place with form                     |
+| `/recommendations`      | YourRecommendationsPage | Manage user-submitted places (edit/delete)       |
+| `/places/:placeId`      | PlaceDetailPage         | Details of a place + reviews section             |
+| `/places/edit/:placeId` | EditPlacePage           | Update previously added place                    |
+| `/signup`               | SignupPage              | Register new user account                        |
+| `/login`                | LoginPage               | Login to existing account                        |
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend Framework:** React (Vite)
+- **Routing:** React Router DOM
+- **Authentication:** JWT with Axios
+- **Styling:** Vanilla CSS + Custom Components
+- **State Management:** useState, useEffect
+- **Deployment:** Docker (local development)
+
+---
+
+## ❄️ IceBox Features
+
+- ⭐ **Place Rating System:** Allow users to rate places based on experience  
+- 📌 **Top Contributor Badges:** Highlight users who add quality places or reviews  
+- 🖼️ **Image Uploads:** Let users attach photos to places they add  
+- 🗺️ **Interactive Maps:** Embed Google Maps for dynamic location display  
+- 🔔 **Real-Time Notifications:** Alert users about new reviews or updates  
+- 🌍 **User Profiles:** Public pages showing user's added places and reviews  
+- 📲 **Social Media Sharing:** Share reviews or places to Twitter, Instagram, etc.  
+- 🧠 **Smart Suggestions:** Recommend places based on what users interact with  
+
+---
+
+## 🔗 Project Links
+
+| Item            | Link                          |
+|-----------------|-------------------------------|
+| Backend         | http://localhost:8000         |
+| Frontend        | http://localhost:5173         |
+| Frontend Repo   | https://github.com/Abdullah-Alhammadi/Dalilah_Frontend |
+| Backend Repo    | https://github.com/Abdullah-Alhammadi/Dalilah_Backend  |
+
+---
+
+## 🐳 Installation (Docker)
+
+```bash
+# Clone the project
+git clone <your-backend-repo-url>
+cd dalilah_backend
+
+# Start Docker
+docker compose up --build
+
+```
