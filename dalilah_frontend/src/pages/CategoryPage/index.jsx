@@ -41,7 +41,7 @@ export default function CategoryPage({ selectedCity, onSelectCategory }) {
 
     return (
         <section className="category-page-vertical">
-            <h1>Select a Category in {selectedCity?.name}</h1>
+            <h1 className='main_question'>What are you looking for in {selectedCity?.name}🔍</h1>
             <div className="category-list-vertical">
                 {categories.map((category) => (
                     <div

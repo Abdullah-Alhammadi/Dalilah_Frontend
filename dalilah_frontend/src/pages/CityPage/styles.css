@@ -27,10 +27,46 @@
 }
 
 .riyadh-card {
-  background: linear-gradient(135deg, #FAD961, #00C9FF);}
+  /* background-image: url('../../assets/Riyadh_Carad.jpg'); */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.riyadh-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.riyadh-card .first-content,
+.riyadh-card .second-content {
+  position: relative;
+  z-index: 1;
+}
+
 
 .abha-card {
-  background: linear-gradient(135deg, #A8E063, #56ab2f);
+  /* background-image: url('../../assets/Abha_Carad.jpg'); */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.abha-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.abha-card .first-content,
+.abha-card .second-content {
+  position: relative;
+  z-index: 1;
 }
 
 .first-content {
@@ -51,11 +87,6 @@
 }
 
 .second-content {
-  /* position: absolute;
-  height: 0%;
-  width: 100%;
-  opacity: 0;
-  display: flex; */
   justify-content: center;
   align-items: center;
   border-radius: 16px;

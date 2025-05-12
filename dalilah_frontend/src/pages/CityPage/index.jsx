@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { index as getCities } from '../../utilities/city-api';
+import riyadhImage from '../../assets/Riyadh_card.jpg';  
+import abhaImage from '../../assets/Abha_card.jpg';  
+
 import './styles.css';
 
 export default function CityPage({ onSelectCity }) {
@@ -26,20 +29,28 @@ export default function CityPage({ onSelectCity }) {
 
     return (
         <section className="city-page-vertical">
-            {cities.map((city) => (
-                <div
-                    key={city.id}
-                    className={`card ${city.name.toLowerCase() === 'riyadh' ? 'riyadh-card' : 'abha-card'}`}
-                    onClick={() => handleCityClick(city)}
-                >
-                    <div className="first-content">
-                        <span>{city.name}</span>
+            {cities.map((city) => {
+                const isRiyadh = city.name.toLowerCase() === 'riyadh';
+                const cardStyle = isRiyadh
+                    ? { backgroundImage: `url(${riyadhImage})` }
+                    : {backgroundImage: `url(${abhaImage})`}; 
+
+                return (
+                    <div
+                        key={city.id}
+                        className={`card ${isRiyadh ? 'riyadh-card' : 'abha-card'}`}
+                        style={cardStyle}
+                        onClick={() => handleCityClick(city)}
+                    >
+                        <div className="first-content">
+                            <span>{city.name}</span>
+                        </div>
+                        <div className="second-content">
+                            <p>{city.description}</p>
+                        </div>
                     </div>
-                    <div className="second-content">
-                        <p>{city.description}</p>
-                    </div>
-                </div>
-            ))}
+                );
+            })}
         </section>
     );
 }
